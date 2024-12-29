@@ -356,9 +356,9 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                   <!-- /column -->
                 </div>
                 <!-- /.row -->
-                <div class="swiper-container gallery_cursor grid-view nav-bottom nav-color mb-14" data-margin="30" data-dots="false" data-nav="true" data-items-md="3" data-items-xs="1">
+                <div class="swiper-container  grid-view nav-bottom nav-color mb-14" data-margin="30" data-dots="false" data-nav="true" data-items-md="3" data-items-xs="1">
                   <div class="swiper overflow-visible">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper gallery_cursor">
                       <?php if (have_rows('gallery', 'option')) : ?>
                         <?php while (have_rows('gallery', 'option')) : the_row(); ?>
                           <?php $photo_media = get_sub_field('photo_media'); ?>
