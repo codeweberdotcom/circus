@@ -90,7 +90,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
               <?php endif; ?>
             <?php endwhile; ?>
           <?php endif; ?>
-          <figure style="width: 150px; height: 150px; position: absolute; top: 34%; left: 22.7%; z-index: 2" class="hover-scale img5 d-none d-lg-block">
+          <figure style="width: 150px; height: 150px; position: absolute; top: 34%; left: 22.7%; z-index: 2" class="img5 d-none d-lg-block">
 
             <img style="width: 140px; height: 140px;" src="<?php echo get_template_directory_uri(); ?>/dist/img/about-us_w.svg" alt="" />
 
@@ -454,7 +454,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                             <div class="item">
                               <figure class="rounded-0 shadow"><img src="<?php echo esc_url($photo_about2_size[0]); ?>" alt=""></figure>
                             </div>
-                            <figure style="width: 150px; height: 150px; position: absolute; top: 20%; left: 12.7%; z-index: 2" class="hover-scale img5 d-none d-lg-block">
+                            <figure style="width: 150px; height: 150px; position: absolute; top: 20%; left: 12.7%; z-index: 2" class="img5 d-none d-lg-block">
                               <img style="width: 140px; height: 140px;" src="<?php echo get_template_directory_uri(); ?>/dist/img/about-us_w.svg" alt="" />
                             </figure>
                           <?php endif; ?>
