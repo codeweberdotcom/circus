@@ -64,28 +64,28 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
               <?php $image_2 = get_sub_field('image_2'); ?>
               <?php if ($image_2) : ?>
                 <figure data-cue="slideInLeft" class="hover-scale img2 d-none d-lg-block">
-                  
-                    <img src="<?php echo esc_url(wp_get_attachment_image_url($image_2['ID'], 'circus_1')); ?>"
-                      alt="<?php echo esc_attr($image_2['alt']); ?>" />
-                
+
+                  <img src="<?php echo esc_url(wp_get_attachment_image_url($image_2['ID'], 'circus_1')); ?>"
+                    alt="<?php echo esc_attr($image_2['alt']); ?>" />
+
                 </figure>
               <?php endif; ?>
               <?php $image_3 = get_sub_field('image_3'); ?>
               <?php if ($image_3) : ?>
                 <figure data-cue="slideInLeft" class="hover-scale img4 d-none d-lg-block">
-                 
-                    <img src="<?php echo esc_url(wp_get_attachment_image_url($image_3['ID'], 'circus_2')); ?>"
-                      alt="<?php echo esc_attr($image_3['alt']); ?>" />
-               
+
+                  <img src="<?php echo esc_url(wp_get_attachment_image_url($image_3['ID'], 'circus_2')); ?>"
+                    alt="<?php echo esc_attr($image_3['alt']); ?>" />
+
                 </figure>
               <?php endif; ?>
               <?php $image_4 = get_sub_field('image_4'); ?>
               <?php if ($image_4) : ?>
                 <figure data-cue="slideInLeft" class="hover-scale img1 d-none d-lg-block">
-                 
-                    <img src="<?php echo esc_url(wp_get_attachment_image_url($image_4['ID'], 'circus_1')); ?>"
-                      alt="<?php echo esc_attr($image_4['alt']); ?>" />
-                
+
+                  <img src="<?php echo esc_url(wp_get_attachment_image_url($image_4['ID'], 'circus_1')); ?>"
+                    alt="<?php echo esc_attr($image_4['alt']); ?>" />
+
                 </figure>
               <?php endif; ?>
             <?php endwhile; ?>
@@ -355,11 +355,12 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                     <div class="swiper-wrapper gallery_cursor">
                       <?php if (have_rows('gallery', 'option')) : ?>
                         <?php while (have_rows('gallery', 'option')) : the_row(); ?>
+                          <?php $photo_video = get_sub_field('photo-video'); ?>
                           <?php $photo_media = get_sub_field('photo_media'); ?>
                           <?php $video_st = get_sub_field('video_st'); ?>
                           <?php $photo_media_url = wp_get_attachment_image_url($photo_media['ID'], 'sandbox_hero_3'); // Замените 'your_custom_size' на имя вашего размера 
                           ?>
-                          <?php if (isset($video_st['url']) && get_sub_field( 'photo-video' ) === 'Видео') : ?>
+                          <?php if (isset($video_st['url']) && $photo_video === 'Видео') : ?>
                             <div class="swiper-slide">
                               <figure class="position-relative video_button position-relative">
                                 <a href="<?php echo get_sub_field('video_st')['url']; ?>" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox data-gallery="g1"><i class="icn-caret-right text-dark"></i></a>
@@ -367,7 +368,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                               </figure>
                             </div>
                           <?php endif; ?>
-                          <?php if (isset($photo_media['url']) && !isset($video_st['url']) && get_sub_field('photo-video') === 'Фото') : ?>
+                          <?php if (isset($photo_media['url']) && $photo_video === 'Фото') : ?>
                             <div class="swiper-slide">
                               <figure class="rounded-0 mb-7 hover-scale">
                                 <a href="<?php echo esc_url($photo_media['sizes']['sandbox_hero_6']); ?>" data-glightbox data-gallery="g1">

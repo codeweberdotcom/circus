@@ -478,7 +478,7 @@
                         "Видео": "Видео"
                     },
                     "default_value": "Фото",
-                    "return_format": "label",
+                    "return_format": "value",
                     "allow_null": 0,
                     "other_choice": 0,
                     "layout": "vertical",
@@ -978,5 +978,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735489976
+    "modified": 1735490314
 }
