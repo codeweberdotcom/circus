@@ -91,9 +91,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
             <?php endwhile; ?>
           <?php endif; ?>
           <figure style="width: 150px; height: 150px; position: absolute; top: 34%; left: 22.7%; z-index: 2" class="img5 d-none d-lg-block">
-
             <img style="width: 140px; height: 140px;" src="<?php echo get_template_directory_uri(); ?>/dist/img/about-us_w.svg" alt="" />
-
           </figure>
           </section>
           <!-- /section -->
@@ -234,10 +232,6 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
             });
           </script>
 
-
-
-
-
           <section id="buy_ticket" class="wrapper image-wrapper bg-image bg-overlay" data-image-src="<?php echo get_template_directory_uri(); ?>/dist/img/29_2-1-copyright.jpg">
             <div class="container py-18">
               <div class="row">
@@ -365,7 +359,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                           <?php $video_st = get_sub_field('video_st'); ?>
                           <?php $photo_media_url = wp_get_attachment_image_url($photo_media['ID'], 'sandbox_hero_3'); // Замените 'your_custom_size' на имя вашего размера 
                           ?>
-                          <?php if (isset($video_st['url'])) : ?>
+                          <?php if (isset($video_st['url']) && get_sub_field( 'photo-video' ) === 'Видео') : ?>
                             <div class="swiper-slide">
                               <figure class="position-relative video_button position-relative">
                                 <a href="<?php echo get_sub_field('video_st')['url']; ?>" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox data-gallery="g1"><i class="icn-caret-right text-dark"></i></a>
@@ -373,7 +367,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                               </figure>
                             </div>
                           <?php endif; ?>
-                          <?php if (isset($photo_media['url']) && !isset($video_st['url'])) : ?>
+                          <?php if (isset($photo_media['url']) && !isset($video_st['url']) && get_sub_field('photo-video') === 'Фото') : ?>
                             <div class="swiper-slide">
                               <figure class="rounded-0 mb-7 hover-scale">
                                 <a href="<?php echo esc_url($photo_media['sizes']['sandbox_hero_6']); ?>" data-glightbox data-gallery="g1">
