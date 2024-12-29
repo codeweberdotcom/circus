@@ -99,6 +99,40 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
           <!-- /section -->
 
           <style>
+            .img1 {
+              top: 44%;
+              position: absolute;
+              right: 12%;
+              width: 280px;
+              z-index: 2;
+            }
+
+            .img4 {
+              top: 20%;
+              position: absolute;
+              right: 3%;
+              width: 340px;
+              z-index: 3;
+            }
+
+
+            .img2 {
+              top: 44%;
+              position: absolute;
+              left: 12%;
+              width: 280px;
+              z-index: 3;
+            }
+
+            .img3 {
+              top: 20%;
+              position: absolute;
+              left: 3%;
+              width: 340px;
+              z-index: 2;
+            }
+
+
             .img5 {
               animation: rotate infinite 8s linear;
               transform-origin: center;
@@ -177,7 +211,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                   console.log('Mouse entered .gallery_cursor');
                   cursorPoint.style.width = '60px';
                   cursorPoint.style.height = '60px';
-                  
+
 
                   // Добавляем d-block и удаляем d-none
                   arrowIcon.classList.add('d-block');
