@@ -64,28 +64,28 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
               <?php $image_2 = get_sub_field('image_2'); ?>
               <?php if ($image_2) : ?>
                 <figure data-cue="slideInLeft" class="hover-scale img2 d-none d-lg-block">
-                  <a href="#">
+                  
                     <img src="<?php echo esc_url(wp_get_attachment_image_url($image_2['ID'], 'circus_1')); ?>"
                       alt="<?php echo esc_attr($image_2['alt']); ?>" />
-                  </a>
+                
                 </figure>
               <?php endif; ?>
               <?php $image_3 = get_sub_field('image_3'); ?>
               <?php if ($image_3) : ?>
                 <figure data-cue="slideInLeft" class="hover-scale img4 d-none d-lg-block">
-                  <a href="#">
+                 
                     <img src="<?php echo esc_url(wp_get_attachment_image_url($image_3['ID'], 'circus_2')); ?>"
                       alt="<?php echo esc_attr($image_3['alt']); ?>" />
-                  </a>
+               
                 </figure>
               <?php endif; ?>
               <?php $image_4 = get_sub_field('image_4'); ?>
               <?php if ($image_4) : ?>
                 <figure data-cue="slideInLeft" class="hover-scale img1 d-none d-lg-block">
-                  <a href="#">
+                 
                     <img src="<?php echo esc_url(wp_get_attachment_image_url($image_4['ID'], 'circus_1')); ?>"
                       alt="<?php echo esc_attr($image_4['alt']); ?>" />
-                  </a>
+                
                 </figure>
               <?php endif; ?>
             <?php endwhile; ?>
