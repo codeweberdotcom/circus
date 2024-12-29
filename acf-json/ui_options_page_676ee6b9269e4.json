@@ -1,0 +1,26 @@
+{
+    "key": "ui_options_page_676ee6b9269e4",
+    "title": "Настройки главной страницы",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Настройки главной страницы",
+    "menu_slug": "home-page-settings",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Настройки главной",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-admin-settings"
+    },
+    "update_button": "Обновить",
+    "updated_message": "Настройки были обновлены",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1735321551
+}

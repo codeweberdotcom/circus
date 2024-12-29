@@ -1,0 +1,19 @@
+# System files
+**/.directory
+**/**.DS_Store
+**/Thumbs.db
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode
+
+# NPM
+node_modules
+
+# Composer
+
+
+# Compiled
+dev

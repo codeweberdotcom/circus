@@ -1,0 +1,85 @@
+// Use this to overwrite Bootstrap and theme variables
+
+// Example of a variable override to change the primary color.
+// Remove the "//" to uncomment it and see it in action.
+// $primary: #36a6cf;
+
+// Example of a variable override to change the theme font.
+// Remove the "//" to uncomment it and see it in action.
+// $font-family-sans-serif: "Arial", sans-serif;
+
+// To use a custom font, first add the font files inside folder src/assets/fonts/
+// Then use the example below to import your custom font.
+// Remove the "//" to uncomment it and see it in action.
+// $path-to-fonts: '../fonts/myfont/myfont.css';
+// $font-family-sans-serif: "My Font Name", sans-serif;
+
+// To use a Google font use the example below.
+// Remove the "//" to uncomment it and see it in action.
+
+//$path-to-fonts: "https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap";
+//$font-family-sans-serif: "Montserrat", sans-serif;
+
+$path-to-fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap";
+$font-family-sans-serif: "Inter", sans-serif;
+
+
+$primary: #ffa51d !default;
+
+
+$link-colors: #FFA51D !default;
+$link-color: #FFA51D !default;
+
+$blue: #f0f0f0 !default;
+$secondary: #ff4612 !default;
+$light: #ffffff !default;
+$gray: #BEC1C5 !default;
+$dark: #262b32 !default;
+
+
+
+
+$input-btn-padding-y: 0.52rem !default;
+$input-btn-padding-x: 2rem !default;
+
+$font-size-base: 0.9rem !default;
+$btn-font-weight: 400 !default;
+
+$btn-hover-bg-shade-amount: 5% !default;
+$btn-hover-border-shade-amount: 5% !default;
+
+
+$display-font-sizes: (
+  1: 2.85rem, // 2.4rem * 1.08125
+  2: 2.379rem, // 2.2rem * 1.08125
+  3: 2.162rem, // 2.0rem * 1.08125
+  4: 1.946rem, // 1.8rem * 1.08125
+  5: 1.73rem,  // задано
+  6: 1.513rem, // 1.4rem * 1.08125
+) !default;
+
+$font-weight-base: 400 !default;
+
+
+
+
+
+// $nav-link-font-weight: 500 !default;
+// $btn-font-weight: 500 !default;
+// $headings-font-weight: 500 !default;
+// $display-font-weight: 500 !default;
+
+
+
+$icon-caret-up: "\ec07" !default;
+$icon-caret-down: "\ec5d" !default;
+
+
+$btn-border-width: 1px !default;
+
+$nav-link-font-size: 0.85rem !default;
+$nav-link-font-weight: 400 !default;
+
+
+
+
