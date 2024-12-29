@@ -87,15 +87,11 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
    </nav>
    <!-- /.navbar -->
 
-
-
-
    <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
          <?php echo codeweber_logo('dark', NULL, NULL); ?>
          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-
 
       <div class="offcanvas-body pb-6">
          <?php do_action('codeweber_offcanvas_start'); ?>

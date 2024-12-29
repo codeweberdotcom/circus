@@ -12,7 +12,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="cursor-point"></div>
+	<div class="cursor-point d-flex align-items-center justify-content-center"><i class="uil uil-arrow d-none text-white fs-24"></i></div>
 	<?php sandbox_page_loader(); ?>
 	<?php do_action('codeweber_start_body'); // Hook start body 
 	?>
@@ -183,7 +183,7 @@
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
 		} elseif (is_page() || is_front_page()) {
-			
+
 			if (get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header');
 			} else {
@@ -200,10 +200,9 @@
 
 			if (get_field('navbar_color') == 'default') {
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_color');
-				
 			} elseif (get_field('navbar_color') !== 'default') {
 				$codeweber['page_settings']['nav_color'] = get_field('navbar_color');
-				if(is_front_page(  )){
+				if (is_front_page()) {
 					$codeweber['page_settings']['nav_color'] = 'navbar-dark';
 				}
 			} else {
@@ -213,8 +212,6 @@
 			// Blog //			
 
 		} elseif (is_blog() || is_single() || is_category() || is_tag() || is_author()) {
-
-			
 			//Header Style
 			if (get_field('cw_transparent_header')) {
 				if (get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
