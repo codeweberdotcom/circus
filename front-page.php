@@ -342,7 +342,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                           <?php if (isset($photo_media['url']) && !isset($video_st['url'])) : ?>
                             <div class="swiper-slide">
                               <figure class="rounded-0 mb-7 hover-scale">
-                                <a href="<?php echo esc_url($photo_media['url']); ?>" data-glightbox data-gallery="g1">
+                                <a href="<?php echo esc_url($photo_media['sizes']['sandbox_hero_6']); ?>" data-glightbox data-gallery="g1">
                                   <img src="<?php echo esc_url($photo_media_url); ?>" alt="" />
                                 </a>
                               </figure>
