@@ -187,6 +187,11 @@ if (!class_exists('WP_Bootstrap_Navwalker')) {
 				$atts['title'] = $item->attr_title;
 			}
 
+
+			$custom_class = !empty($item->classes) ? esc_attr($item->classes[0]) : '';
+
+
+
 			$atts['target'] = !empty($item->target) ? $item->target : '';
 			$atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
 			// If item has_children add atts to <a>.
@@ -203,7 +208,7 @@ if (!class_exists('WP_Bootstrap_Navwalker')) {
 				if ($depth > 0) {
 					$atts['class'] = 'dropdown-item';
 				} else {
-					$atts['class'] = 'nav-link scroll';
+					$atts['class'] = 'nav-link ' . $custom_class;
 				}
 			}
 

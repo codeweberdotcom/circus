@@ -61,6 +61,11 @@ function codeweber_socialicons()
 			'icon-style' => 'uil',
 			'icon-name' => 'uil-instagram',
 		),
+		'ok' => array(
+			'social-name' => 'ok',
+			'icon-style' => 'uil',
+			'icon-name' => 'uil-ok',
+		),
 
 		'whatsapp' => array(
 			'social-name' => 'whatsapp',
