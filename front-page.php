@@ -152,7 +152,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
               width: 8px;
               height: 8px;
               border-radius: 50%;
-              background-color: black;
+              background-color: #ff4612;
               pointer-events: none;
               transform: translate(-50%, -50%);
               transition: transform 0.1s ease;
@@ -161,23 +161,16 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
           </style>
           <script>
             document.addEventListener('DOMContentLoaded', () => {
+              // Проверка ширины окна для десктопов
+              const isDesktop = window.innerWidth > 768; // Задаем минимальную ширину для десктопа
+              if (!isDesktop) return;
+
               const cursorPoint = document.querySelector('.cursor-point');
               const arrowIcon = cursorPoint.querySelector('i'); // Выбираем иконку внутри cursor-point
               const galleryCursorElements = document.querySelectorAll('.gallery_cursor');
 
               // Проверяем существование элементов
-              if (!cursorPoint) {
-                console.error('Элемент с классом .cursor-point не найден!');
-                return;
-              }
-
-              if (!arrowIcon) {
-                console.error('Элемент <i> внутри .cursor-point не найден!');
-                return;
-              }
-
-              if (galleryCursorElements.length === 0) {
-                console.warn('Элементы с классом .gallery_cursor не найдены!');
+              if (!cursorPoint || !arrowIcon || galleryCursorElements.length === 0) {
                 return;
               }
 
@@ -206,10 +199,9 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
               // Наведение на элементы с .gallery_cursor
               galleryCursorElements.forEach((element) => {
                 element.addEventListener('mouseenter', () => {
-                  console.log('Mouse entered .gallery_cursor');
                   cursorPoint.style.width = '60px';
                   cursorPoint.style.height = '60px';
-
+                  cursorPoint.style.backgroundColor = '#ff0000';
 
                   // Добавляем d-block и удаляем d-none
                   arrowIcon.classList.add('d-block');
@@ -217,9 +209,9 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
                 });
 
                 element.addEventListener('mouseleave', () => {
-                  console.log('Mouse left .gallery_cursor');
                   cursorPoint.style.width = '8px';
                   cursorPoint.style.height = '8px';
+                  cursorPoint.style.backgroundColor = '#ff0000';
 
                   // Удаляем d-block и добавляем d-none
                   arrowIcon.classList.remove('d-block');
@@ -231,6 +223,7 @@ if (get_field('enable_teh', 'option') === 'Отключить') {
               animate();
             });
           </script>
+
 
           <section id="buy_ticket" class="wrapper image-wrapper bg-image bg-overlay" data-image-src="<?php echo get_template_directory_uri(); ?>/dist/img/29_2-1-copyright.jpg">
             <div class="container py-18">
