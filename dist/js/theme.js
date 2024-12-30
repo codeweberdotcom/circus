@@ -236,15 +236,15 @@ var theme = {
     const shrinked_header_height = 75;
     const sections = document.querySelectorAll(".onepage section");
     sections.forEach((section) => {
-      section.style.paddingTop = shrinked_header_height + "px";
-      section.style.marginTop = "-" + shrinked_header_height + "px";
+      section.style.paddingTop = shrinked_header_height;
+      section.style.marginTop = "-" + shrinked_header_height;
     });
     const first_section = document.querySelector(
       ".onepage section:first-of-type"
     );
     if (first_section != null) {
-      first_section.style.paddingTop = header_height + "px";
-      first_section.style.marginTop = "-" + header_height + "px";
+      first_section.style.paddingTop = header_height;
+      first_section.style.marginTop = "-" + header_height;
     }
   },
   /**
