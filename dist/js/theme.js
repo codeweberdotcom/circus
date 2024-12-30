@@ -229,24 +229,24 @@ var theme = {
    * Onepage Header Offset
    * Adds an offset value to anchor point equal to sticky header height on a onepage
    */
-  onepageHeaderOffset: () => {
-    var navbar = document.querySelector(".navbar");
-    if (navbar == null) return;
-    const header_height = document.querySelector(".navbar").offsetHeight;
-    const shrinked_header_height = 75;
-    const sections = document.querySelectorAll(".onepage section");
-    sections.forEach((section) => {
-      section.style.paddingTop = shrinked_header_height + "px";
-      section.style.marginTop = "-" + shrinked_header_height + "px";
-    });
-    const first_section = document.querySelector(
-      ".onepage section:first-of-type"
-    );
-    if (first_section != null) {
-      first_section.style.paddingTop = header_height + "px";
-      first_section.style.marginTop = "-" + header_height + "px";
-    }
-  },
+  // onepageHeaderOffset: () => {
+  //   var navbar = document.querySelector(".navbar");
+  //   if (navbar == null) return;
+  //   const header_height = document.querySelector(".navbar").offsetHeight;
+  //   const shrinked_header_height = 75;
+  //   const sections = document.querySelectorAll(".onepage section");
+  //   sections.forEach((section) => {
+  //     section.style.paddingTop = shrinked_header_height + "px";
+  //     section.style.marginTop = "-" + shrinked_header_height + "px";
+  //   });
+  //   const first_section = document.querySelector(
+  //     ".onepage section:first-of-type"
+  //   );
+  //   if (first_section != null) {
+  //     first_section.style.paddingTop = header_height + "px";
+  //     first_section.style.marginTop = "-" + header_height + "px";
+  //   }
+  // },
   /**
    * Spy Scroll
    * Highlights the active nav link while scrolling through sections

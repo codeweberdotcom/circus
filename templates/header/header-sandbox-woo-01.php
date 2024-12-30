@@ -96,8 +96,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
       <div class="offcanvas-body pb-6">
          <?php do_action('codeweber_offcanvas_start'); ?>
          <?php offcanvas_contact_option(); ?>
-         <div class="widget-title mb-3 widget-title mb-3 h5 fs-24">Опрос</div>
-         <a target="_blank" href="https://forms.mkrf.ru/e/2579/xTPLeBU7/?ap_orgcode=319.." rel="noopener" aria-label="Ссылка" class=""><img class="mb-5" width="150" height="150" src="<?php echo get_template_directory_uri(); ?>/dist/img/dimx0rtf_.jpg"></a> <!-- /.widget -->
+         <a target="_blank" href="https://forms.mkrf.ru/e/2579/xTPLeBU7/?ap_orgcode=319.." rel="noopener" aria-label="Ссылка" class=""><img class="mb-5" width="150" height="150" src="https://cirk-kosmos.ru/wp-content/uploads/2024/12/dimx0rtf_p9zojlb-uu8kdxya0vgftufzbr6phjwajtqdhjlzhrwq6u8z5hasgj5dogxfenlmexaplovjyp5loxg-150x150.jpg"></a> <!-- /.widget -->
          <?php social_icons_option(); ?>
          <?php do_action('codeweber_offcanvas_end'); ?>
       </div>

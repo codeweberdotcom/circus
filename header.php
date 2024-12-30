@@ -11,7 +11,7 @@
 	<?php $forms = array(); ?>
 </head>
 
-<body class="onepage">
+<body <?php body_class('onepage'); ?>>
 	<div class="cursor-point d-flex align-items-center justify-content-center"><i class="uil uil-arrow d-none text-white fs-24"></i></div>
 	<?php sandbox_page_loader(); ?>
 	<?php do_action('codeweber_start_body'); // Hook start body 
