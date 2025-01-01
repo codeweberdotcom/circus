@@ -35,7 +35,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
          <div class="navbar-brand w-100 pe-3">
             <?php echo codeweber_logo($color_logo, NULL, $logo_style); ?>
          </div>
-         <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+         <div class="navbar-collapse offcanvas offcanvas-nav bg-navy offcanvas-start">
             <div class="offcanvas-header d-lg-none">
                <?php echo codeweber_logo('light', NULL, NULL); ?>
                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
