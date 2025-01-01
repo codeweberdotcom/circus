@@ -85,6 +85,7 @@ function codeweber_breadcrumbs($align, $color, $show)
 				function ($args) {
 					$args = array(
 						'delimiter'   => '',
+						'separator'   => '',
 						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 justify-content-center">',
 						'wrap_after'  => '</ol></nav>',
 						'before'      =>
@@ -100,7 +101,8 @@ function codeweber_breadcrumbs($align, $color, $show)
 				'rank_math/frontend/breadcrumb/args',
 				function ($args) {
 					$args = array(
-						'delimiter'   => '',
+						'delimiter'   => '&nbsp;/&nbsp;',
+						'separator'   => '',
 						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 justify-content-end">',
 						'wrap_after'  => '</ol></nav>',
 						'before'      =>
@@ -116,7 +118,8 @@ function codeweber_breadcrumbs($align, $color, $show)
 				'rank_math/frontend/breadcrumb/args',
 				function ($args) {
 					$args = array(
-						'delimiter'   => '',
+						'delimiter'   => '&nbsp;/&nbsp;',
+						'separator'   => '',
 						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
 						'wrap_after'  => '</ol></nav>',
 						'before'      =>
@@ -133,6 +136,19 @@ function codeweber_breadcrumbs($align, $color, $show)
 				function ($html, $crumbs, $class) {
 					$html = str_replace('<li class="breadcrumb-item text-muted">', '<li class="breadcrumb-item text-white">', $html);
 					$html = str_replace('<span class="text-muted">', '<span class="text-white">', $html);
+					$html = str_replace('<span class="separator">', '', $html);
+					$html = str_replace('</span>', '', $html);
+					return $html;
+				},
+				10,
+				3
+			);
+		} else {
+			add_filter(
+				'rank_math/frontend/breadcrumb/html',
+				function ($html, $crumbs, $class) {
+					$html = str_replace('<span class="separator">', '', $html);
+					$html = str_replace('</span>', '', $html);
 					return $html;
 				},
 				10,
@@ -557,10 +573,62 @@ function page_frame_banner()
 add_action('wp_head', 'metrics');
 function metrics()
 {
-	if (get_field('counter_yandex', 'option')) {
-		the_field('counter_yandex', 'option');
+	if ($yandex = get_field('counter_yandex', 'option')) {
+		echo $yandex;
 	}
-	if (get_field('counter_google', 'option')) {
-		the_field('counter_google', 'option');
+	if ($google = get_field('counter_google', 'option')) {
+		echo $google;
 	}
-};
+}
+
+
+
+function add_custom_meta_box()
+{
+	add_meta_box(
+		'main_tag_meta_box',
+		'Основная метка',
+		'main_tag_meta_box_callback',
+		'projects', // Ваш CPT
+		'side',
+		'high'
+	);
+}
+add_action('add_meta_boxes', 'add_custom_meta_box');
+
+
+function main_tag_meta_box_callback($post)
+{
+	// Получаем текущие метки
+	$tags = get_terms([
+		'taxonomy' => 'projects_category', // или ваша таксономия
+		'orderby' => 'name',
+		'hide_empty' => false,
+	]);
+
+	// Извлекаем сохранённое значение основной метки
+	$selected_tag = get_post_meta($post->ID, '_main_tag', true);
+
+	echo '<select name="main_tag">';
+	foreach ($tags as $tag) {
+		echo '<option value="' . esc_attr($tag->term_id) . '" ' . selected($selected_tag, $tag->term_id, false) . '>' . esc_html($tag->name) . '</option>';
+	}
+	echo '</select>';
+}
+
+function save_main_tag_meta($post_id)
+{
+	if (isset($_POST['main_tag'])) {
+		update_post_meta($post_id, '_main_tag', $_POST['main_tag']);
+	}
+}
+add_action('save_post', 'save_main_tag_meta');
+
+
+add_theme_support('rank-math-breadcrumbs');
+
+if (version_compare($GLOBALS['wp_version'], '6.7', '<')) {
+	load_theme_textdomain('codeweber', get_template_directory() . '/languages');
+} else {
+	load_textdomain('codeweber', get_template_directory() . '/languages/' . determine_locale() . '.mo');
+}
