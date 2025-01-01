@@ -261,7 +261,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          </section>
       <?php
       } elseif ($type == 'type_8') { ?>
-         <section class="wrapper bg-gray">
+         <section class="wrapper bg-navy">
             <div class="container py-3 py-md-5">
                <?php codeweber_breadcrumbs(NULL, $text_color, true); ?>
             </div>
@@ -291,7 +291,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          </section>
       <?php
       } elseif ($type == 'type_9') { ?>
-         <section class="wrapper bg-gray">
+         <section class="wrapper bg-navy">
             <div class="container py-3 py-md-5">
                <?php codeweber_breadcrumbs(NULL, $text_color, true); ?>
             </div>
@@ -299,7 +299,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          </section>
       <?php
       } elseif ($type == 'type_10') { ?>
-         <section class="wrapper bg-gray">
+         <section class="wrapper bg-navy">
             <div class="container py-3">
                <?php codeweber_breadcrumbs(NULL, $text_color, true); ?>
             </div>
@@ -307,7 +307,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          </section>
       <?php
       } elseif ($type !== NULL) { ?>
-         <section class="wrapper bg-gray">
+         <section class="wrapper bg-navy">
             <div class="container py-3 py-md-5">
                <?php codeweber_breadcrumbs(NULL, $text_color, true); ?>
             </div>

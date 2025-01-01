@@ -91,9 +91,7 @@
 							</div>
 						</div>
 						<p><?php the_author_meta('description'); ?></p>
-						<nav class="nav social">
-							<?php get_template_part('templates/components/socialicons', ''); ?>
-						</nav>
+						<?php md_social_icons_option(); ?>
 					</article>
 					<!-- /.post -->
 				</div>
