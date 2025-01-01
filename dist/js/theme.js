@@ -56,7 +56,7 @@ var theme = {
     theme.bsPopovers();
     theme.bsModal();
     theme.iTooltip();
-    //theme.forms();
+    //theme.forms()
     theme.passVisibility();
     theme.pricingSwitcher();
     theme.textRotator();
@@ -236,15 +236,15 @@ var theme = {
     const shrinked_header_height = 75;
     const sections = document.querySelectorAll(".onepage section");
     sections.forEach((section) => {
-      section.style.paddingTop = shrinked_header_height;
-      section.style.marginTop = "-" + shrinked_header_height;
+      section.style.paddingTop = shrinked_header_height + "px";
+      section.style.marginTop = "-" + shrinked_header_height + "px";
     });
     const first_section = document.querySelector(
       ".onepage section:first-of-type"
     );
     if (first_section != null) {
-      first_section.style.paddingTop = header_height;
-      first_section.style.marginTop = "-" + header_height;
+      first_section.style.paddingTop = header_height + "px";
+      first_section.style.marginTop = "-" + header_height + "px";
     }
   },
   /**
@@ -273,26 +273,57 @@ var theme = {
     };
   },
   /**
-   * Anchor Smooth Scroll
+   * Anchor Smooth Scroll for full URL links with navigation
    * Adds smooth scroll animation to links with .scroll class
-   * Requires assets/js/vendor/smoothscroll.js
    */
   anchorSmoothScroll: () => {
     const links = document.querySelectorAll(".scroll");
     for (const link of links) {
       link.addEventListener("click", clickHandler);
     }
+
     function clickHandler(e) {
       e.preventDefault();
       this.blur();
+
+      // Получаем полный href и разбираем его
       const href = this.getAttribute("href");
-      const offsetTop = document.querySelector(href).offsetTop;
-      scroll({
-        top: offsetTop,
-        behavior: "smooth",
-      });
+      const [baseUrl, anchor] = href.split("#");
+
+      if (anchor) {
+        const currentUrl = window.location.origin + window.location.pathname;
+
+        if (currentUrl === baseUrl) {
+          // Если находимся на той же странице
+          scrollToAnchor(anchor);
+        } else {
+          // Если страница другая
+          sessionStorage.setItem("scrollToAnchor", anchor); // Сохраняем якорь
+          window.location.href = baseUrl; // Переходим на нужную страницу
+        }
+      }
+    }
+
+    // Проверяем, был ли сохранен якорь при загрузке страницы
+    const savedAnchor = sessionStorage.getItem("scrollToAnchor");
+    if (savedAnchor) {
+      sessionStorage.removeItem("scrollToAnchor"); // Удаляем якорь после обработки
+      scrollToAnchor(savedAnchor);
+    }
+
+    // Функция для плавного скролла к элементу
+    function scrollToAnchor(anchor) {
+      const targetElement = document.querySelector(`#${anchor}`);
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop;
+        scroll({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
     }
   },
+
   /**
    * SVGInject
    * Replaces an img element with an inline SVG so you can apply colors to your SVGs
