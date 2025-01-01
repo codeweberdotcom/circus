@@ -273,7 +273,7 @@ var theme = {
     };
   },
   /**
-   * Anchor Smooth Scroll for full URL links with navigation
+   * Anchor Smooth Scroll for both relative and full URL links
    * Adds smooth scroll animation to links with .scroll class
    */
   anchorSmoothScroll: () => {
@@ -288,7 +288,9 @@ var theme = {
 
       // Получаем полный href и разбираем его
       const href = this.getAttribute("href");
-      const [baseUrl, anchor] = href.split("#");
+      const url = new URL(href, window.location.href); // Обрабатывает как относительные, так и полные URL
+      const baseUrl = url.origin + url.pathname;
+      const anchor = url.hash.slice(1); // Извлекаем якорь без '#'
 
       if (anchor) {
         const currentUrl = window.location.origin + window.location.pathname;
